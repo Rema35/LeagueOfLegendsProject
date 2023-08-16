@@ -1,5 +1,3 @@
-import org.jetbrains.compose.compose
-
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
@@ -20,7 +18,9 @@ kotlin {
                 api(compose.runtime)
                 api(compose.foundation)
                 api(compose.material)
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+                implementation("io.ktor:ktor-server-core:2.3.3")
+                implementation("io.ktor:ktor-server-netty:2.3.3")
+                implementation("io.ktor:ktor-client-cio:2.3.3")
             }
         }
         val commonTest by getting {
@@ -59,7 +59,4 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-}
-dependencies {
-    implementation("androidx.navigation:navigation-runtime-ktx:2.7.0")
 }
